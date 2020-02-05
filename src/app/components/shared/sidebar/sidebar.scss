@@ -1,0 +1,120 @@
+#sidebar-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &.shown {
+    pointer-events: all;
+
+    #sidebar {
+      transform: translateX(0px);
+
+      .list {
+        opacity: 1;
+
+        &-item {
+          transform: translateX(-10px);
+          font-size: 30px;
+          padding: 15px 0;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &.top-bar {
+    top: 98px;
+  }
+
+  #sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 150px;
+    width: 26vw;
+    padding: 2.25vw 0 2.25vw 2vw;
+    background-color: rgba(0,0,0,0.8);
+    color: $white;
+    overflow: scroll;
+    transform: translateX(-26vw);
+    transition: all .3s ease;
+    overflow: hidden;
+
+    .scroll-content {
+      height: 100%;
+      direction: rtl;
+      height: 100%;
+      direction: rtl;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      text-align: left;
+      margin-top: 2.5vw;
+      padding: 1.5vw 2.5vw 1.5vw 3.5vw;
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: rgba(0,0,0,.1);
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow: visible;
+      }
+
+      &::-webkit-scrollbar {
+        width: 20px;
+        overflow: visible;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        width: 20px;
+        border-radius: 0px;
+        background-color: $blue;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 100px;
+          width: 20px;
+          background-color: $blue;
+        }
+      }
+    }
+
+    .list {
+      opacity: 0;
+
+      li {
+        transform: translateY(20px);
+        &:first-child {
+          .link {
+            padding-top: 0;
+          }
+        }
+        &:last-child {
+          .link {
+            padding-bottom: 0;
+          }
+        }
+
+        .link {
+          display: block;
+          font-size: 30px;
+          font-weight: 400;
+          text-transform: uppercase;
+          padding: 10px 0;
+          color: $white;
+
+          &:hover, &:focus, &:active {
+            color: $blue;
+            font-weight: bold;
+          }
+        }
+      }
+    }    
+  }
+}

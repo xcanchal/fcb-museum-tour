@@ -1,0 +1,29 @@
+/* LIBS */
+// Web icons font (Linear free)
+@import '../assets/fonts/material-design-iconic-font/css/material-design-iconic-font.css';
+
+//Carousel
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// Colors
+@import '../styles/colors_fonts';
+
+// Mixins and classes
+@import '../styles/helpers';
+
+// General styles
+@import './general';
+
+// Shared components
+@import '../components/shared/navbar/navbar';
+@import '../components/shared/sidebar/sidebar';
+@import '../components/shared/topbar/topbar';
+
+// Views
+@import '../components/waiting/waiting';
+@import '../components/home/home';
+@import '../components/floor/floor';
+@import '../components/floor/modal/modal';
+@import '../components/floor/section/section';
+@import '../components/must-see/must-see';

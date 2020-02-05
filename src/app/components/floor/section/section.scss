@@ -1,0 +1,41 @@
+.floor-section {
+    width: 12vw;
+    height: 12vw;
+    padding: 0.25vw 0.3vw; 
+    background: white;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    z-index: 5;
+    position: absolute;
+    opacity: 0;
+    transform: translateY(5%);
+    box-shadow: 0px 35px 35px -6px rgba(0, 0, 0, 0.2);
+    
+    .thumbnail {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 8.85vw;
+    }
+
+    .text {
+      height: 2.6vw;
+      font-size: 1vw;
+      border-top: 0.25vw solid $white;
+      background-color: $blue;
+      color: $white;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+
+      p {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 20px;
+      }
+    }
+  }

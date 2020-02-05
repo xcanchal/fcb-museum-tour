@@ -1,0 +1,242 @@
+#home-container {
+  height: 100%;
+  width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  #stadium, 
+  .home-floor,
+  .home-floor-disabled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  #stadium {
+    background-image: url('../../assets/img/home/home_stadium.png');
+    transform: scale(2, 2) rotate(5deg);
+    opacity: 0;
+  }
+
+  .home-floor,
+  .home-floor-disabled {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    &-marker {
+      position: absolute;
+      height: auto !important;
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &-qr {
+      opacity: 0;
+	  visibility: hidden;
+	  &.shown {
+		visibility: visible;
+	  }
+    }
+
+    &-grey {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #999;
+      opacity: 0;
+      transition: all .3s;
+      pointer-events: none;
+
+      &.shown {
+        opacity: 1;
+      }
+    }
+  }
+
+  .home-menu {
+    position: absolute;
+    top: 6.75vw;
+    left: 0;
+    width: 100%;
+    padding: 0 13%;
+
+    .home-btn-wrap {
+      margin-bottom: 1.6vw;
+
+      &.align-left {
+        text-align: left;
+        margin-bottom: 0;
+        margin-top: 3.85vw;
+
+        .home-btn,
+        .home-btn-disabled {
+          padding: 0.2vw 1vw 0.3vw 7vw;
+          transform: translateX(20%);
+        }
+      }
+
+      &.align-left + .align-left {
+        margin-top: 30px;
+      }
+
+      &.align-right {
+        text-align: right;
+
+        .home-btn,
+        .home-btn-disabled {
+          padding: 0.2vw 0.25vw 0.3vw 2.5vw;
+          transform: translateX(-20%);
+
+          .subtitle {
+            padding-right: 3.5vw;
+          }
+        }
+      }
+
+      .home-btn,
+      .home-btn-disabled {
+        display: inline-block;
+        background-color: $blue;
+        width: 19vw;
+        border: 0.3vw solid $blue;
+        color: $white;
+        text-align: left;
+        position: relative;
+        opacity: 0;
+        box-shadow: 0px 0px 0px 0.15vw $white inset;
+
+        &:hover, &:active {
+          background-color: darken($blue, 10%);
+        }
+
+        &-disabled {
+          pointer-events: none;
+        }
+
+        .btn-text,
+        .btn-icon {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .btn-text {
+          width: 100%;
+
+          .title, .subtitle {
+            @include truncate();
+            text-transform: uppercase;
+          }
+
+          .title {
+            font-size: 1.8vw;
+          }
+
+          .subtitle {
+            font-size: 1.1vw;
+          }
+        }
+
+        .btn-icon {
+          position: absolute;
+          font-size: 2.25vw;
+          top: 0.9vw;
+          border: 0.1vw solid $greyText;
+          width: 2.5vw;
+          height: 2.5vw;
+          border-radius: 100%;
+          text-align: center;
+          line-height: 2.5vw;
+          color: $greyText;
+
+          &.zmdi-chevron-left {
+            left: 30px;
+          }
+
+          &.zmdi-chevron-right {
+            right: 30px;
+          }
+        }
+      }
+    }
+  }
+  
+  .img-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 15;
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    .image-wrap {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      .image {
+        box-shadow: 0px 20px 50px -5px rgba(0, 0, 0, 0.5);
+      }
+
+      .close {
+        position: absolute;
+        top: 0px;
+        right: -9%;
+        width: 3.75vw;
+        height: 3.75vw;
+        color: $white;
+        text-align: center;
+        font-size: 3vw;
+        line-height: 3.75vw;
+        display: block;
+        background-color: $garnet;
+  
+        &:hover, &:active {
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+  }
+
+  .grey-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #999999;
+  }
+}

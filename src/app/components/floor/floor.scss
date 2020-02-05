@@ -1,0 +1,124 @@
+#floor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  .layers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &#layer-floor {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transform: translateY(10%) rotate(-3deg);
+      opacity: 0;
+      bottom: 0;
+    }
+
+    &#layer-icons {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+    }
+
+    &-marker {
+      position: absolute;
+      height: auto !important;
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &-qr {
+    opacity: 0;
+    visibility: hidden;
+      &.shown {
+        visibility: visible;
+      }
+    }
+  }
+
+  .layer-grey {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #999;
+    opacity: 0;
+    transition: all .5s;
+    pointer-events: none;
+    z-index: 10;
+
+    &.shown {
+      opacity: 1;
+    }
+  }
+
+  .floor-legend {
+    width: 350px;
+    height: 350px;
+    background-size: 700px 350px;
+    width: 18vw;
+    height: 18vw;
+    background-size: 36vw 18vw;
+    background-position: left top;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 7vw;
+    right: 0px;
+    opacity: 0;
+    transform:translateX(90%);
+
+    &.shown {
+      opacity: 1;
+      transform:translateX(10%);
+    }
+
+    &.active {
+      background-position: right top;
+    }
+  }
+
+  .floor-label {
+    position: absolute;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 1.45vw;
+    font-weight: 600;
+    opacity: 0;
+    background-color: $yellow;
+    color: black;
+    padding: 0.25vw 0.9vw;
+    border-radius: 0.25vw;
+  }
+
+  .connector {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(5%);
+  }
+
+  .grey-mask {
+    position: absolute;
+    background-color: red;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

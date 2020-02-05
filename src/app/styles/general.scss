@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+
+  > div,
+  > div + div {
+    height: 100%;
+    background-color: $greyBg;
+    overflow: hidden;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: $roboto;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none,
+}
+
+a {
+  text-decoration: none;
+  &:hover, &:active, &:visited, &:focus {
+    text-decoration: none;
+  }
+}
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.generic-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.connector, .layers, .layer {
+  pointer-events: none !important;
+}

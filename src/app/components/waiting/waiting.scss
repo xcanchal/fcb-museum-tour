@@ -1,0 +1,39 @@
+#waiting-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  .link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    &.grayscale {
+      filter: grayscale(100%);
+    }
+  }
+
+  .gradient {
+    background: linear-gradient(141deg, $blue 30%, $garnet 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: .9; // JUST FOR TESTING VIDEO PURPOSES!!
+  }
+}

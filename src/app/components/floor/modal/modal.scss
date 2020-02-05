@@ -1,0 +1,155 @@
+#modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+
+  .dark-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.9)
+  }
+
+  #modal {
+    position: absolute;
+    top: 50%;
+    height: 75%;
+    transform: translateY(-52%);
+    left: 13%;
+    right: 13%;
+    background-color: $greyBg;
+
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+      height: 100%;
+      color: $white;
+
+      .slick-slide {
+        padding: 50px 0 130px 0;
+        text-align: center;
+        transition: all .3s .2s;
+        opacity: 0;
+        transform: scale(0.8,0.8);
+        
+        &.slick-active {
+          opacity: 1;
+          transform: scale(1,1);
+        }
+
+        img,
+        video {
+          height: 100%;
+          margin: 0 auto;
+        }
+
+        .caption {
+          font-size: 1.3vw;
+          max-width: 60vw;
+          margin: .75vw auto 0 auto;
+          color: $blue;
+        }
+      }
+    }
+
+    .slick-arrow {
+      display: block;
+      position: absolute;
+      text-align: right;
+      bottom: 0;
+      height: 100%;
+      width: auto;
+      text-align: right;
+      z-index: 10;
+      &::before {
+        color: $blue;
+      }
+      &:hover, &:active {
+        &::before {
+          color: $blue;
+        }
+      }
+
+      &::before {
+        font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+        font-size: 10vw;
+        color: $blue;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+      }
+
+      &.slick-prev {
+        left: 0px;
+        right: 50%;
+
+        &::before {
+          content: '\F2FA';
+          left: 40px;
+        }
+        
+      }
+      &.slick-next {
+        right: 0px;
+        left: 50%;
+
+        &::before {
+          content: '\F2FB';
+          right: 40px;
+        }
+      }
+    }
+
+    .slick-dots {
+      top: 1.5%;
+      bottom: auto;
+
+      li {
+        width: 1vw;
+        height: 1.25vw;
+        margin: 0 10px;
+
+        &.slick-active {
+          button {
+            &::before {
+              color: $garnet;
+            }
+          }
+        }
+
+        button {
+          width: 100%;
+          height: 100%;
+
+          &::before {
+            font-size:1.3vw;
+          }
+        }
+      }
+    }
+
+    .close {
+      position: absolute;
+      top: 0px;
+      right: -5.5%;
+      width: 3.75vw;
+      height: 3.75vw;
+      color: $white;
+      text-align: center;
+      font-size: 3vw;
+      line-height: 3.75vw;
+      display: block;
+      background-color: $garnet;
+
+      &:hover, &:active {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}

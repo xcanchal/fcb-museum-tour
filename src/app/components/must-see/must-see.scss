@@ -1,0 +1,145 @@
+#must-see-container {
+  height: 100%;
+
+  .legend {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    &-base,
+    &-chapter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .col {
+    height: 100%;
+
+    &__left {
+      width: 70%;
+      padding: 4%;
+
+      .video-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 89%;
+        margin-top: 3%;
+
+        #video {
+          width: 100%;
+          min-height: 100%;
+          object-fit: cover;
+        }
+
+        .play-big {
+          position: absolute;
+          font-size: 11vw;
+          color: white;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          &:hover, &:active {
+            color: rgba(255,255,255,.75);
+          }
+        }
+
+        .chapter-list {
+          position: absolute;
+          top: 1.5%;
+          left: 1.25%;
+    
+          .chapter {
+            padding: 0.3vw 1vw;
+            color: $darkGrey;
+            margin-bottom: 10px;
+            background: rgba($white, 0.75);
+            transition: all .2s;
+
+            &:hover,
+            &:active,
+            &.active {
+              background: rgba($garnet, 0.75);
+              color: $white;
+            }
+
+            .left, .right {
+              display: inline-block;
+              vertical-align: top;
+
+              .number, .title, .subtitle {
+                @include truncate();
+              }
+
+              .number {
+                font-size: 2vw;
+                font-weight: 400;
+                line-height: 2.25vw;
+                margin-right: 0.75vw;
+              }
+
+              .title {
+                font-size: 1vw;
+                text-transform: uppercase;
+                margin-bottom: 0;
+              }
+
+              .subtitle {
+                font-size: 0.85vw;
+              }
+            }
+
+            .right {
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .video-below {
+        .control-bar {
+          text-align: center;
+
+          .controls {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+            padding: 0 50px;
+            color: $white;
+            font-size: 100px;
+          
+            &.active {
+              color: $garnet;
+            }
+
+            &.disabled {
+              pointer-events: none;
+              color: rgba(255,255,255,.25);
+            }
+          }
+        }
+
+        .video-caption {
+          color: white;
+          text-align: center;
+          margin-top: 20px;
+          font-size: 28px;
+        }
+      }
+    }
+
+    &__right {
+      width: 30%;
+    }
+  }
+}
+
