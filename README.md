@@ -58,7 +58,3 @@
 - webpack (plugins, chunks)
 - eslint checking loader in webpack?
 - hot module reloading
-
-
-# ATTENTION: SCSS IS NOT BEING PARSED PROPERLY ?
-
